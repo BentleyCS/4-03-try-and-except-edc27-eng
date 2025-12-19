@@ -8,16 +8,31 @@ def sum(arr : list) -> int:
     :param arr:
     :return:
     """
-    pass
+    total = 0
+    for i in range(len(arr)):
+        try:
+            total += arr[i]
+        except:
+            pass
+    return total
 
 def cleanData(rawData : list) ->list:
     """
     modify the function such that it takes in a list as an argument will return a new list that
-     contains only the valeus that can be typecast to a float.
+     contains only the values that can be typecast to a float.
     :param rawData:
     :return:
     """
-    pass
+    nuData = []
+    for i in range(len(rawData)):
+        try:
+            x = float(rawData[i])
+            nuData.append(x)
+        except:
+            pass
+    return nuData
+
+
 def unreliableCalculator(divisors : list) -> list:
     """
     Modify the function such that it takes in a list as an argument and returns a new list where each
@@ -27,22 +42,34 @@ def unreliableCalculator(divisors : list) -> list:
     :param divisors:
     :return:
     """
-    pass
+    nuDiv = []
+    for i in range(len(divisors)):
+        try:
+            x = divisors[i]
+            n = 100/x
+            nuDiv.append(n)
+        except:
+            if x == 0:
+                nuDiv.append("ZeroDivisionError")
+            else:
+                nuDiv.append("TypeError")
+    return nuDiv
 
 
 def upperAll(arr : list) -> None:
     """
     Modiy the function such that is uppercases all strings within the given argument list.
     The string method .upper() turns all characters in as tirng uppercase.
-    You should mpdify the original list not return a new list.
+    You should modify the original list not return a new list.
     :param arr:
     :return:
     """
-    x = "hello"
-    print(x)
-    x = x.upper()
-    print(x)
-
+    for i in range(len(arr)):
+        try:
+           x = arr[i]
+           arr[i] = x.upper()
+        except:
+            pass
 
 def firstItems(arr : list) -> list:
     """
@@ -54,5 +81,13 @@ def firstItems(arr : list) -> list:
     :param arr:
     :return:
     """
-    pass
-
+    newA = []
+    for i in range(len(arr)):
+        try:
+            x = arr[i]
+            xN = x[0]
+            newA.append(xN)
+        except:
+            y = arr[i]
+            newA.append(y)
+    return newA
